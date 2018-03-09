@@ -4,7 +4,6 @@ var path = require("path");
 
 
 // Sets up the Express App
-// =============================================================
 var app = express();
 var PORT = 3000;
 
@@ -13,16 +12,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-// these documents controls the flow of routes
-require("./app/routing/api-routes.js")(app);
-require("./app/routing/html-routes.js")(app);
-
+// These are basically route files.
+// Stole these from the Internet
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
 
 
 
 // Starts the server to begin listening
-// =============================================================
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
